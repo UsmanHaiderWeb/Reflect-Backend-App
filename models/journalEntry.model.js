@@ -6,7 +6,7 @@ const journalEntrySchema = mongoose.Schema({
     mood: { type: String, required: true },
     createdBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     collection: { type: mongoose.Schema.Types.ObjectId, ref: 'usercollection', required: true },
-},{ timestamps: true });
+},{ timestamps: true, suppressReservedKeysWarning: true, });
 
 const JournalEntry = mongoose.model('JournalEntry', journalEntrySchema);
 export default JournalEntry;

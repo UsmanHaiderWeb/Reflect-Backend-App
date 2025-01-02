@@ -47,6 +47,8 @@ const createServer = async () => {
             res.json({message: "Sorry for inconvinience. Server is down."});
         });
 
+        app.listen(3000);
+
     } catch (error) {
         console.log("SERVER STOPPED: ", error.message);
         process.exit(1);

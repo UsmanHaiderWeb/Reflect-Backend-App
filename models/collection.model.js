@@ -7,6 +7,7 @@ const collectionSchema = mongoose.Schema({
     journalEntries: [{ type: mongoose.Schema.Types.ObjectId, ref: 'JournalEntry', default: [] }],
 }, {
     timestamps: true,
+    suppressReservedKeysWarning: true,
 });
 
 const Collection = mongoose.model('usercollection', collectionSchema);

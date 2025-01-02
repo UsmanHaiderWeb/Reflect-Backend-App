@@ -9,6 +9,7 @@ const userSchema = mongoose.Schema({
     blackListedTokens: [{ type: mongoose.Schema.Types.ObjectId, ref: 'BlackListedToken', default: [] }],
 },{
     timestamps: true,
+    suppressReservedKeysWarning: true,
 });
 
 const User = mongoose.model('User', userSchema);
