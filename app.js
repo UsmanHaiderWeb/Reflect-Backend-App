@@ -28,6 +28,8 @@ const createServer = async () => {
         app.use(cookieParser());
         app.use(morgan('dev'));
         app.use(helmet());
+        
+        app.get('/', (req, res) => res.status(200).json({message: 'We got you. If you want to see our API, go to docs.'}));
 
         const graphqlServer = new ApolloServer({
             typeDefs: graphqlTypesDefs,
@@ -36,7 +38,6 @@ const createServer = async () => {
         await graphqlServer.start();
 
         app.use('/graphql', expressMiddleware(graphqlServer));
-        app.get('/', (req, res) => res.status(200).json({message: 'We got you. If you want to see our API, go to docs.'}));
         app.use('/api/user', userRouter);
         app.use('/api/journal', journalRouter);
         app.use('/api/collection', collectionRouter);
@@ -46,9 +47,6 @@ const createServer = async () => {
             res.json({message: "Sorry for inconvinience. Server is down."});
         });
 
-        app.listen(process.env.PORT || 3000, () => {
-            console.log('Server is running on port 3000');
-        });
     } catch (error) {
         console.log("SERVER STOPPED: ", error.message);
         process.exit(1);
