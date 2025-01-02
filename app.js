@@ -55,3 +55,43 @@ const createServer = async () => {
 
 createServer();
 export default app;
+
+
+
+
+/*
+old package.json file
+
+{
+  "name": "reflect-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A backend service build for Pinterest (personal project)",
+  "main": "app.js",
+  "scripts": {
+    "build": "npm install --legacy-peer-deps",
+    "dev": "node ./app.js"
+  },
+  "author": "Usman Haider",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.11.2",
+    "@clerk/express": "^1.3.23",
+    "bcrypt": "^5.1.1",
+    "cloudinary": "^2.5.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "graphql": "^16.9.0",
+    "helmet": "^8.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.4",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "streamifier": "^0.1.1",
+    "validator": "^13.12.0"
+  }
+}
+
+*/
