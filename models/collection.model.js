@@ -9,5 +9,5 @@ const collectionSchema = mongoose.Schema({
     timestamps: true,
 });
 
-const Collection = mongoose.model('Collection', collectionSchema);
+const Collection = mongoose.model('usercollection', collectionSchema);
 export default Collection;
