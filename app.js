@@ -17,6 +17,7 @@ const app = express();
 
 const createServer = async () => {
     try {
+        console.log("SERVER STARTED");
         config();
         await connectToDb()
         app.use(express.urlencoded({ extended: true }));
@@ -48,15 +49,13 @@ const createServer = async () => {
             res.json({message: "Sorry for inconvinience. Server is down."});
         });
 
-        app.listen(3000);
-
     } catch (error) {
         console.log("SERVER STOPPED: ", error.message);
         process.exit(1);
     }
 };
 
-createServer();
+await createServer();
 export default app;
 
 
